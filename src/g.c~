@@ -81,7 +81,7 @@ double h_complementary;
 
 // size of virtual 2D array of pixels
 // each piexel has a RGB color
-int iWidth = 780;
+int iWidth = 600;
 int iHeight ; // 
 int iXmax ;
 int iYmax ;
