@@ -591,6 +591,12 @@ to overwrite
 git mv -f 
 ```
 
+[to remove file from remote repo](https://stackoverflow.com/questions/2047465/how-can-i-delete-a-file-from-a-git-repository)
+```git
+git rm --cached file1.txt
+git commit -m "remove"
+git push -u origin main
+```
 
 
 local repo: ~/hsluv-c/test/t2
