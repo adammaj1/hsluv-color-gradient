@@ -37,28 +37,27 @@
 
 
 ### discrete
+![](./images/0_100_dicrete_no.png  "description")   
 
-![](./images/0_100_continous_diverging_2D.png "description")   
-
-![](./images/0_100_continous_diverging.png "0_100_continous_diverging")  
-
-
-
-![](./images/0_100_continous_diverging.png  "description")   
-
-![](./images/0_100_continous_diverging.png  "description")   
+![](./images/0_100_dicrete_no_2D.png  "description")   
 
 
 
-![](./images/0_100_continous_no.png "description")   
 
-![](./images/0_100_continous_diverging_2D.png "description")   
+![](./images/0_100_dicrete_steps.png "description")   
+
+![](./images/0_100_dicrete_steps_2D.png "description")   
 
 
-![](./images/0_100_continous_diverging.png "0_100_continous_diverging")  
+![](./images/0_100_dicrete_tubes.png "0_100_dicrete_diverging")  
 
-![](./images/0_100_continous_diverging.png  "description")   
+![](./images/0_100_dicrete_tubes_2D.png  "description")   
 
+
+
+![](./images/0_100_dicrete_diverging.png  "description")   
+
+![](./images/0_100_dicrete_diverging_2D.png "description")   
 
 # How to run the code ?
 
