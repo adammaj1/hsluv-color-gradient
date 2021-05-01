@@ -1,9 +1,11 @@
 
 # Examples
-* General Type
+
+Gradient types:
+* General types
   * continous  
   * discrete  
-* Joining type 
+* Joining types 
   * no  
   * steps  
   * tubes  
@@ -58,6 +60,12 @@
 ![](./images/0_100_discrete_diverging.png  "description")   
 
 ![](./images/0_100_discrete_diverging_2D.png "description")   
+
+
+
+
+
+
 
 # How to run the code ?
 
@@ -367,13 +375,51 @@ delete all ppm and txt files rm *.ppm
 rm *.txt
 ```
 
+# Theory
+
+Sequential map with varying lightness, single hue rendered in HSLuv color space. See : [Interactive Creation of Perceptually Uniform Color Maps by  M. Lambers ](https://diglib.eg.org/bitstream/handle/10.2312/evs20201048/055-059.pdf)
+
+
+# How program works ?
+General steps
+* c program creates ppm and txt files
+* Image Magic converts ppm to png ( color bars)
+* gnuplot converts txt to png files ( 2D RGB color profiles ) 
+* remove txt and ppm files
+
+Steps of the C program:
+* 
+
+
+
+Results: 
+* there are 2 general gradient types
+* there are 4 gradient joining types 
+* there are 7 values of lightnes =  "0 60 120 180 240 300 360"
+* for each gradient there are 2 images: gradient bar and 2D RGB profile
+
+so the program creates 2*4*7*2 = [112 png images](./images)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Dependencies
 * gcc
-* hsluv-c
+* hsluv-c: function hsluv2rgb from [HSLuv-C](https://github.com/hsluv/hsluv-c) = C implementation of [HSLuv = Human-friendly HSL](https://www.hsluv.org/)
 * make
-* gnuplot 
+* gnuplot: onverts txt to png files ( 2D RGB color profiles ) 
+* Image Magic: converts ppm to png ( color bars)
 * bash
 
 
@@ -382,6 +428,8 @@ rm *.txt
 * [1D-RGB-color-gradient](https://github.com/adammaj1/1D-RGB-color-gradient)
 
 # Files
+
+
 
 # Licence
 
