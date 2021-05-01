@@ -1,4 +1,4 @@
-1D discrete and continous perceptually uniform ordered color gradients rendered in [HSL](https://www.hsluv.org/)   
+1D discrete and continous perceptually uniform ordered color gradients rendered in [HSL](https://www.hsluv.org/)
 
 
 
@@ -516,7 +516,7 @@ rm *.txt
 
 
 # Credits
-* function hsluv2rgb from [HSLuv-C](https://github.com/hsluv/hsluv-c) = C implementation of [HSLuv = Human-friendly HSL](https://www.hsluv.org/)
+* function hsluv2rgb from [HSLuv-C](https://github.com/hsluv/hsluv-c) = C implementation of [HSLuv = Human-friendly HSL](https://www.hsluv.org/) by [Alexei Boronine](https://www.boronine.com/)
 * [1D-RGB-color-gradient](https://github.com/adammaj1/1D-RGB-color-gradient)
 
 # Files
