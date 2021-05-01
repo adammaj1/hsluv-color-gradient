@@ -1,6 +1,7 @@
 
-
-
+# Credits
+* function hsluv2rgb from [HSLuv-C](https://github.com/hsluv/hsluv-c) = C implementation of [HSLuv = Human-friendly HSL](https://www.hsluv.org/)
+* [1D-RGB-color-gradient](https://github.com/adammaj1/1D-RGB-color-gradient)
 
 
 
