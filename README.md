@@ -1,9 +1,87 @@
 
+# Examples
+* General Type
+  * continous  
+  * discrete  
+* Joining type 
+  * no  
+  * steps  
+  * tubes  
+  * diverging  
+
+## HSV = [0, 100, v]
+
+
+### continous
+![](./images/0_100_continous_no.png  "description")   
+
+![](./images/0_100_continous_no_2D.png .png "description")   
+
+
+
+
+![](./images/0_100_continous_no.png "description")   
+
+![](./images/0_100_continous_diverging_2D.png "description")   
+
+
+![](./images/0_100_continous_diverging.png "0_100_continous_diverging")  
+
+![](./images/0_100_continous_diverging.png  "description")   
+
+
+
+![](./images/0_100_continous_diverging.png  "description")   
+
+![](./images/0_100_continous_no.png "description")   
+
+
+### discrete
+
+![](./images/0_100_continous_diverging_2D.png "description")   
+
+![](./images/0_100_continous_diverging.png "0_100_continous_diverging")  
+
+
+
+![](./images/0_100_continous_diverging.png  "description")   
+
+![](./images/0_100_continous_diverging.png  "description")   
+
+
+
+![](./images/0_100_continous_no.png "description")   
+
+![](./images/0_100_continous_diverging_2D.png "description")   
+
+
+![](./images/0_100_continous_diverging.png "0_100_continous_diverging")  
+
+![](./images/0_100_continous_diverging.png  "description")   
+
+
+# How to run the code ?
+
+```
+make
+```
+
+
+
+
+# Dependencies
+* gcc
+* hsluv-c
+* make
+* gnuplot
+* bash
+
+
 # Credits
 * function hsluv2rgb from [HSLuv-C](https://github.com/hsluv/hsluv-c) = C implementation of [HSLuv = Human-friendly HSL](https://www.hsluv.org/)
 * [1D-RGB-color-gradient](https://github.com/adammaj1/1D-RGB-color-gradient)
 
-
+# Files
 
 # Licence
 
