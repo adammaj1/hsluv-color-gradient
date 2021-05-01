@@ -68,7 +68,7 @@ do for [n=0:nMax]{
 				
 				
 			# title of the image for the array of strings
-			sTitle = sprintf(" 2D RGB profiles of the %s colormap with %s GradientJoiningType for hsl = [%s, 100, var]", word(titles,n+1), word(sGradientJoiningType, j+1),word(sH, h+1))
+			sTitle = sprintf(" 2D RGB profiles of the %s colormap with %s gradient for hsl = [%s, 100, l]", word(titles,n+1), word(sGradientJoiningType, j+1),word(sH, h+1))
 			set title sTitle
 
 			# Now plot the data with lines and points
