@@ -139,8 +139,15 @@ for(iX=0; iX<iXmax; ++iX){
 	// SaveColorToArray and Txt file
 }
 
-
 ```
+
+[Complementary color](https://en.wikipedia.org/wiki/Complementary_colors) for diverging gradient :
+```c
+h_complementary = 180.0+ h;
+if (h_complementary > 360.0) { h_complementary -= 360.0;}
+```
+
+
 
 
 # How program works ?
