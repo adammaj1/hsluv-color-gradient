@@ -164,7 +164,11 @@ Results:
 * there are 7 values of lightnes :  0 60 120 180 240 300 360
 * for each gradient there are 2 images: gradient bar and 2D RGB profile
 
-so the program creates 2*4*7*2 = [112 png images](./images)
+so the program creates [112 png images](./images)
+```math
+2*4*7*2 = 112
+```
+
 
 
 ```c
@@ -518,6 +522,7 @@ rm *.txt
 # Credits
 * function hsluv2rgb from [HSLuv-C](https://github.com/hsluv/hsluv-c) = C implementation of [HSLuv = Human-friendly HSL](https://www.hsluv.org/) by [Alexei Boronine](https://www.boronine.com/)
 * [1D-RGB-color-gradient](https://github.com/adammaj1/1D-RGB-color-gradient)
+* [ https://www.shellcheck.net/](shellcheck) by Vidar Holen
 
 # Files
 
