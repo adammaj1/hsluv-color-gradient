@@ -520,10 +520,20 @@ rm *.txt
 # Dependencies
 * gcc
 * hsluv-c: function hsluv2rgb from [HSLuv-C](https://github.com/hsluv/hsluv-c) = C implementation of [HSLuv = Human-friendly HSL](https://www.hsluv.org/)
-* make
+* make 
 * gnuplot: onverts txt to png files ( 2D RGB color profiles ) 
 * Image Magic: converts ppm to png ( color bars)
 * bash
+
+Tested on:
+* GNU Make 4.3
+* GNU bash, version 5.0.17(1)
+* GNUPLOT Version 5.2 patchlevel 8 
+* gcc (Ubuntu 10.2.0-13ubuntu1) 10.2.0
+* Version: ImageMagick 6.9.10-23 Q16 x86_64 20190101 https://imagemagick.org
+
+
+
 
 
 # Credits
