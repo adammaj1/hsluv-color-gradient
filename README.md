@@ -66,6 +66,126 @@ Gradient types:
 
 
 
+## HSL = [60, 100, l]
+
+
+### continous
+![](./images/60_100_continous_no.png  "description")   
+
+![](./images/60_100_continous_no_2D.png  "description")   
+
+
+
+
+![](./images/60_100_continous_steps.png "description")   
+
+![](./images/60_100_continous_steps_2D.png "description")   
+
+
+![](./images/60_100_continous_tubes.png "")  
+
+![](./images/60_100_continous_tubes_2D.png  "description")   
+
+
+
+![](./images/60_100_continous_diverging.png  "description")   
+
+![](./images/60_100_continous_diverging_2D.png "description")   
+
+
+### discrete
+![](./images/60_100_discrete_no.png  "description")   
+
+![](./images/60_100_discrete_no_2D.png  "description")   
+
+
+
+
+![](./images/60_100_discrete_steps.png "description")   
+
+![](./images/60_100_discrete_steps_2D.png "description")   
+
+
+![](./images/60_100_discrete_tubes.png "g")  
+
+![](./images/60_100_discrete_tubes_2D.png  "description")   
+
+
+
+![](./images/60_100_discrete_diverging.png  "description")   
+
+![](./images/60_100_discrete_diverging_2D.png "description")   
+
+
+
+
+
+# Theory
+
+Sequential map with varying lightness, single hue rendered in HSLuv color space. See : [Interactive Creation of Perceptually Uniform Color Maps by  M. Lambers ](https://diglib.eg.org/bitstream/handle/10.2312/evs20201048/055-059.pdf)
+* h is constant
+* v is constant
+* l is changing between 0.0 and 100.0 ( full range). It is variable  = gradient position 
+
+
+
+```c
+// for each gradient position ( = lightness) compute hsl
+for(iX=0; iX<iXmax; ++iX){    
+	position = (double) iX / iXmax;
+	// compute hsl color( position)
+	// convert hsl to rgb
+	hsluv2rgb(h, s, l, &r, &g, &b);
+	// SaveColorToArray and Txt file
+}
+
+
+```
+
+
+# How program works ?
+General steps
+* c program creates ppm and txt files
+* Image Magic converts ppm to png ( color bars)
+* gnuplot converts txt to png files ( 2D RGB color profiles ) 
+* remove txt and ppm files
+
+Steps of the C program:
+* for each gradient type and h value create ppm and txt file
+ * ppm file is created by saving 1D array of rgb values ( virtual 2D array)
+ * txt file is a simple list of rgb values for gnuplot
+  
+
+
+
+Results: 
+* there are 2 general gradient types ( continous and discrete ) 
+* there are 4 gradient joining types ( no  steps  tubes  diverging)
+* there are 7 values of lightnes :  0 60 120 180 240 300 360
+* for each gradient there are 2 images: gradient bar and 2D RGB profile
+
+so the program creates 2*4*7*2 = [112 png images](./images)
+
+
+```c
+// make gradient images for each gradient type 
+void MakeGradientImages(const double h, const double s){
+
+	GradientGeneralType gType;
+  	GradientJoiningType jType;
+  	
+	//
+  	for (gType = 0; gType< gMaxType; ++gType)
+  		for (jType = 0; jType < jMaxType; ++jType)
+  				MakeGradientTypeImages(gType, jType, h, s);
+}
+
+// from main : for each h make gradient  images 
+	do {
+   		MakeGradientImages(h,s);
+   		h += h_step; // next gradient 
+	} while( h < h_Max );
+```
 
 
 
@@ -377,75 +497,6 @@ printf "delete all ppm and txt files "
 delete all ppm and txt files rm *.ppm
 rm *.txt
 ```
-
-# Theory
-
-Sequential map with varying lightness, single hue rendered in HSLuv color space. See : [Interactive Creation of Perceptually Uniform Color Maps by  M. Lambers ](https://diglib.eg.org/bitstream/handle/10.2312/evs20201048/055-059.pdf)
-* h is constant
-* v is constant
-* l is changing between 0.0 and 100.0 ( full range). It is variable  = gradient position 
-
-
-
-```c
-// for each gradient position ( = lightness) compute hsl
-for(iX=0; iX<iXmax; ++iX){    
-	position = (double) iX / iXmax;
-	PrintRGBColorToTextFile(fp, position, modifiedPosition, rgb); // 
-	SaveColorToArray(iX, rgb);
-}
-
-// convert hsl to rgb
-hsluv2rgb(h, s, l, &r, &g, &b);
-```
-
-
-# How program works ?
-General steps
-* c program creates ppm and txt files
-* Image Magic converts ppm to png ( color bars)
-* gnuplot converts txt to png files ( 2D RGB color profiles ) 
-* remove txt and ppm files
-
-Steps of the C program:
-* for each gradient type and h value create ppm and txt file
- * ppm file is created by saving 1D array of rgb values ( virtual 2D array)
- * txt file is a simple list of rgb values for gnuplot
-  
-
-
-
-Results: 
-* there are 2 general gradient types ( continous and discrete ) 
-* there are 4 gradient joining types ( no  steps  tubes  diverging)
-* there are 7 values of lightnes :  0 60 120 180 240 300 360
-* for each gradient there are 2 images: gradient bar and 2D RGB profile
-
-so the program creates 2*4*7*2 = [112 png images](./images)
-
-
-```c
-// make gradient images for each gradient type 
-void MakeGradientImages(const double h, const double s){
-
-	GradientGeneralType gType;
-  	GradientJoiningType jType;
-  	
-	//
-  	for (gType = 0; gType< gMaxType; ++gType)
-  		for (jType = 0; jType < jMaxType; ++jType)
-  				MakeGradientTypeImages(gType, jType, h, s);
-}
-
-// from main : for each h make gradient  images 
-	do {
-   		MakeGradientImages(h,s);
-   		h += h_step; // next gradient 
-	} while( h < h_Max );
-```
-
-
-
 
 
 
