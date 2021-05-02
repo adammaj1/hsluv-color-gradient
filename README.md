@@ -79,42 +79,22 @@ Gradient types:
 
 ![](./images/60_100_continous_steps.png "description")   
 
-![](./images/60_100_continous_steps_2D.png "description")   
-
-
 ![](./images/60_100_continous_tubes.png "")  
 
-![](./images/60_100_continous_tubes_2D.png  "description")   
-
-
-
 ![](./images/60_100_continous_diverging.png  "description")   
-
-![](./images/60_100_continous_diverging_2D.png "description")   
 
 
 ### discrete
 ![](./images/60_100_discrete_no.png  "description")   
 
-![](./images/60_100_discrete_no_2D.png  "description")   
-
-
-
-
 ![](./images/60_100_discrete_steps.png "description")   
-
-![](./images/60_100_discrete_steps_2D.png "description")   
-
 
 ![](./images/60_100_discrete_tubes.png "g")  
 
-![](./images/60_100_discrete_tubes_2D.png  "description")   
-
-
-
 ![](./images/60_100_discrete_diverging.png  "description")   
 
-![](./images/60_100_discrete_diverging_2D.png "description")   
+
+
 
 
 
