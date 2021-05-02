@@ -8,7 +8,7 @@ Gradient types:
 * General types
   * continous  
   * discrete  
-* Joining types 
+* Joining types ( see also in [1D RGB gradient](https://github.com/adammaj1/1D-RGB-color-gradient/blob/main/README.md#continous-gradient-manipulations))
   * no  
   * steps  
   * tubes  
@@ -72,11 +72,6 @@ Gradient types:
 ### continous
 ![](./images/60_100_continous_no.png  "description")   
 
-![](./images/60_100_continous_no_2D.png  "description")   
-
-
-
-
 ![](./images/60_100_continous_steps.png "description")   
 
 ![](./images/60_100_continous_tubes.png "")  
@@ -89,7 +84,7 @@ Gradient types:
 
 ![](./images/60_100_discrete_steps.png "description")   
 
-![](./images/60_100_discrete_tubes.png "g")  
+![](./images/60_100_discrete_tubes.png "")  
 
 ![](./images/60_100_discrete_diverging.png  "description")   
 
