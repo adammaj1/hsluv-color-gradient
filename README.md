@@ -99,7 +99,7 @@ Gradient types:
 
 Sequential map with varying lightness, single hue rendered in HSLuv color space. See : [Interactive Creation of Perceptually Uniform Color Maps by  M. Lambers ](https://diglib.eg.org/bitstream/handle/10.2312/evs20201048/055-059.pdf)
 * h is constant
-* v is constant
+* s is constant
 * l is changing between 0.0 and 100.0 ( full range). It is variable  = gradient position 
 
 
@@ -121,6 +121,9 @@ for(iX=0; iX<iXmax; ++iX){
 h_complementary = 180.0+ h;
 if (h_complementary > 360.0) { h_complementary -= 360.0;}
 ```
+
+
+
 
 
 
@@ -173,6 +176,60 @@ void MakeGradientImages(const double h, const double s){
 	} while( h < h_Max );
 ```
 
+## Gradient Joining Types
+
+```c
+
+
+double ModifyPosition(const double position, const GradientGeneralType gTypeVar, const GradientJoiningType jTypeVar){
+	
+	// input position  should be in  [0,1] range 
+	double p = position; // p = local copy of position
+	// if position > 1 then we have repetition of colors = periodic function = wave   
+	 
+	
+	switch(jTypeVar){
+		// simple monotone function 
+		case no : { break;} // return input position without modifications
+		
+		// periodic waves with different joinings
+		case steps : {	p = p * segments; // periodic  = change range
+				p = frac(p); 
+				
+    				break;}
+    				
+		case tubes : {	p = p * segments; // periodic = change range
+				int ip = (int)p;
+      				p = p-ip; // fractional part 
+      				if (ip % 2) {p = 1.0-p;} // reverse gradient
+      				
+				break;}
+				
+		case diverging : { 	p *= 2.0;
+					if (p>1.0) {p = 2.0 - p;} // reverse gradient	 
+										
+					break;}
+		
+		default:{}
+	}
+	if ( gTypeVar == discrete ) { p = double2steps(p); }
+	
+	return p; // output in [0,1] range = modified position
+
+}
+
+```
+
+
+## variables
+* hsl color
+  * h Hue. Between 0.0 and 360.0
+  * s Saturation. Between 0.0 and 100.0
+  * l Lightness. Between 0.0 and 100.0
+* rgb color
+ * r Red component. Between 0.0 and 1.0
+ * g Green component. Between 0.0 and 1.0
+ * b Blue component. Between 0.0 and 1.0
 
 
 
